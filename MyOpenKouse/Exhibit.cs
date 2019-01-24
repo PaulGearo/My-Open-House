@@ -7,10 +7,10 @@ namespace MyOpenHouse
     class Exhibit
     {
         public string Name { get; set; }
-        public bool FreshWater { get; set; }
+       /* public bool FreshWater { get; set; }
         public int NumberOfCreatures { get; set; }
         public bool Indangered { get; set; }
-        public List<string> Descriptions { get; set; } = new List<string>();
+        public List<string> Descriptions { get; set; } = new List<string>();*/
 
         public Exhibit(string name, bool freshwater, int numberofcreatures, bool indangered)
         {
@@ -25,7 +25,7 @@ namespace MyOpenHouse
         public void ShowExhibit()
         {
             string answer = Program.GetUserResponse("Would you like to start the you the " + Name + "?\n");
-            if (Program.IsAffermative(answer))
+            if (Program.YesOrNO(answer))
             {
                 foreach (string description in Descriptions)
                 {
@@ -34,10 +34,8 @@ namespace MyOpenHouse
             }
             else
             {
-                Console.WriteLine("Okay, let's move on to the next exibit.\n");
+                Console.WriteLine("Okay, let's move on to the next exhibit.\n");
             }
-
-
         }
     }
 }

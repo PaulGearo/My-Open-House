@@ -13,7 +13,7 @@ namespace MyOpenHouse
         }
 
         //this method is to gather the users Y/N answers, and to insure they answer as such
-        public static bool IsAffermative(string userResponse)
+        public static bool YesOrNO(string userResponse)
         {
             userResponse = userResponse.ToUpper();
 
@@ -34,13 +34,10 @@ namespace MyOpenHouse
             }
         }
 
-        static  void ShowExibit(Exhibit exibitToShow)
+        static void ShowExhibit(Exhibit exibitToShow)
         {
-  
+
         }
-
-
-
 
         static void Main(string[] args)
         {
@@ -50,14 +47,33 @@ namespace MyOpenHouse
             Exhibit tigerShark = new Exhibit("Tiger Shark");
             tigerShark.Descriptions.Add("...");
 
-            Exhibit tigerShark = new Exhibit("Hammerhead Shark");
-            tigerShark.Descriptions.Add("...");
+            Exhibit hammerheadShark = new Exhibit("Hammerhead Shark");
+            hammerheadShark.Descriptions.Add("...");
 
-            Exhibit tropicalFish = new Exhibit("tropicalFish",true, 2, true);
-            tropicalFish.Descriptions.Add("...");         
-  
-            Exhibit shellFish = new Exhibit("shellfish", true, 2, false);
-            shellFish.Descriptions.Add("...");
+
+            Exhibit clownFish = new Exhibit("Clownfish");
+            clownFish.Descriptions.Add("...");
+
+            Exhibit zebraFish = new Exhibit("Zibrafish");
+            zebraFish.Descriptions.Add("...");
+
+            Exhibit pufferFish = new Exhibit("PufferFish");
+            pufferFish.Descriptions.Add("...");
+
+            Exhibit yellowTang = new Exhibit("Yellow Tang");
+            yellowTang.Descriptions.Add("...");
+
+
+            Exhibit seaUrchin = new Exhibit("Sea Urchin");
+            seaUrchin.Descriptions.Add("...");
+
+            Exhibit lobster = new Exhibit("Lobster");
+            lobster.Descriptions.Add("...");
+
+            Exhibit octopus = new Exhibit("Octopus");
+            octopus.Descriptions.Add("...");
+
+
 
 
 
@@ -73,10 +89,12 @@ namespace MyOpenHouse
             Console.WriteLine("My name is Willy, I am the tour guide for this walkthrough.");
 
             string answer = GetUserResponse("Would you like to start the tour ?\n");
-            if (IsAffermative(answer))
+            if (YesOrNO(answer))
             {
 
-                sharks.ShowExibit();
+
+                
+
 
             }
             else
@@ -84,7 +102,7 @@ namespace MyOpenHouse
                 Console.WriteLine("Ok, thanks for coming in.\n");
 
                 answer = GetUserResponse("would you like to learn more about us?\n");
-                if (IsAffermative(answer))
+                if (YesOrNO(answer))
                 {
                     Console.WriteLine("Here's a flyer describing what we do here.\n");
                 }
