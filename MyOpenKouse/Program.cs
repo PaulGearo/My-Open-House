@@ -34,12 +34,8 @@ namespace MyOpenHouse
             }
         }
 
-        static void ShowExhibit(Exhibit exibitToShow)
-        {
 
-        }
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
 
@@ -49,7 +45,7 @@ namespace MyOpenHouse
             Exhibit tigerShark = new Exhibit("Tiger Shark", false, 2, false);
             tigerShark.Descriptions.Add("...");
 
-            Exhibit hammerheadShark = new Exhibit("Hammerhead Shark",false, 2, false);
+            Exhibit hammerheadShark = new Exhibit("Hammerhead Shark", false, 2, false);
             hammerheadShark.Descriptions.Add("...");
 
             Wing sharkWing = new Wing();
@@ -59,10 +55,10 @@ namespace MyOpenHouse
 
 
 
-            Exhibit clownFish = new Exhibit("Clownfish",false, 2, false);
+            Exhibit clownFish = new Exhibit("Clownfish", false, 2, false);
             clownFish.Descriptions.Add("...");
 
-            Exhibit zebraFish = new Exhibit("Zibrafish",false, 2, false);
+            Exhibit zebraFish = new Exhibit("Zibrafish", false, 2, false);
             zebraFish.Descriptions.Add("...");
 
             Exhibit pufferFish = new Exhibit("PufferFish", false, 2, false);
@@ -82,7 +78,7 @@ namespace MyOpenHouse
             Exhibit seaUrchin = new Exhibit("Sea Urchin", false, 2, false);
             seaUrchin.Descriptions.Add("...");
 
-            Exhibit lobster = new Exhibit("Lobster", false,2, false);
+            Exhibit lobster = new Exhibit("Lobster", false, 2, false);
             lobster.Descriptions.Add("...");
 
             Exhibit octopus = new Exhibit("Octopus", false, 2, false);
@@ -95,18 +91,13 @@ namespace MyOpenHouse
 
 
             TourGuide tourGuide = new TourGuide();
-            Console.WriteLine("Welcome to the Walkthrough Aquarium.");
-            Console.WriteLine("This aquarium is a walkthrough of each exibit,");
-            Console.WriteLine("with a decription of each creature");
-            Console.WriteLine("along with information and fun facts on each species.\n");
+            tourGuide.Name = "Willy";
 
-            string name = GetUserResponse("what's your name\n");
+            Visitor newVisitor = new Visitor();
 
-            //Having volonteered at an aquarium, this is a very normal welcome from a tour guide
-            Console.WriteLine("welcome " + name + ".");
-            Console.WriteLine("My name is Willy, I am the tour guide for this walkthrough.");
+            newVisitor.Name = tourGuide.WelcomeVisitor(newVisitor);
 
-            string answer = GetUserResponse("Would you like to start the tour ?\n");
+            string answer = GetUserResponse("Would you like to start the tour?\n");
             if (YesOrNO(answer))
             {
                 tourGuide.ShowWing(sharkWing);
@@ -115,22 +106,10 @@ namespace MyOpenHouse
             }
             else
             {
-                Console.WriteLine("Ok, thanks for coming in.\n");
-
-                answer = GetUserResponse("would you like to learn more about us?\n");
-                if (YesOrNO(answer))
-                {
-                    Console.WriteLine("Here's a flyer describing what we do here.\n");
-                }
-                else
-                {
-                    Console.WriteLine("No problem.\n");
-                }
+                tourGuide.VisitorSaysNo(newVisitor);
             }
 
-            //this end seemed most appropriate for leaving an establishment like an aquarium.
-            Console.WriteLine("Thank you for visiting, we hope to see you again soon!\n");
-            Console.WriteLine("Have a great day " + name + "!");
+            tourGuide.WishFarewell(newVisitor);
 
             Console.ReadLine();
         }
