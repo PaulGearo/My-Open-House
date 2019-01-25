@@ -43,13 +43,13 @@ namespace MyOpenHouse
         {
 
 
-            Exhibit bullShark = new Exhibit("Bull Shark");
+            Exhibit bullShark = new Exhibit("Bull Shark", false, 2, false);
             bullShark.Descriptions.Add("...");
 
-            Exhibit tigerShark = new Exhibit("Tiger Shark");
+            Exhibit tigerShark = new Exhibit("Tiger Shark", false, 2, false);
             tigerShark.Descriptions.Add("...");
 
-            Exhibit hammerheadShark = new Exhibit("Hammerhead Shark");
+            Exhibit hammerheadShark = new Exhibit("Hammerhead Shark",false, 2, false);
             hammerheadShark.Descriptions.Add("...");
 
             Wing sharkWing = new Wing();
@@ -59,16 +59,16 @@ namespace MyOpenHouse
 
 
 
-            Exhibit clownFish = new Exhibit("Clownfish");
+            Exhibit clownFish = new Exhibit("Clownfish",false, 2, false);
             clownFish.Descriptions.Add("...");
 
-            Exhibit zebraFish = new Exhibit("Zibrafish");
+            Exhibit zebraFish = new Exhibit("Zibrafish",false, 2, false);
             zebraFish.Descriptions.Add("...");
 
-            Exhibit pufferFish = new Exhibit("PufferFish");
+            Exhibit pufferFish = new Exhibit("PufferFish", false, 2, false);
             pufferFish.Descriptions.Add("...");
 
-            Exhibit yellowTang = new Exhibit("Yellow Tang");
+            Exhibit yellowTang = new Exhibit("Yellow Tang", false, 2, false);
             yellowTang.Descriptions.Add("...");
 
             Wing tropicalfishWing = new Wing();
@@ -79,16 +79,19 @@ namespace MyOpenHouse
 
 
 
-            Exhibit seaUrchin = new Exhibit("Sea Urchin");
+            Exhibit seaUrchin = new Exhibit("Sea Urchin", false, 2, false);
             seaUrchin.Descriptions.Add("...");
 
-            Exhibit lobster = new Exhibit("Lobster");
+            Exhibit lobster = new Exhibit("Lobster", false,2, false);
             lobster.Descriptions.Add("...");
 
-            Exhibit octopus = new Exhibit("Octopus");
+            Exhibit octopus = new Exhibit("Octopus", false, 2, false);
             octopus.Descriptions.Add("...");
 
             Wing shellfishwing = new Wing();
+            shellfishwing.Exhibits.Add(lobster);
+            shellfishwing.Exhibits.Add(seaUrchin);
+            shellfishwing.Exhibits.Add(octopus);
 
 
             TourGuide tourGuide = new TourGuide();
@@ -107,11 +110,8 @@ namespace MyOpenHouse
             if (YesOrNO(answer))
             {
                 tourGuide.ShowWing(sharkWing);
-                tourGuide.ShowWing(tropicalfishWing);    
-                
-
-
-
+                tourGuide.ShowWing(tropicalfishWing);
+                tourGuide.ShowWing(tropicalfishWing);
             }
             else
             {

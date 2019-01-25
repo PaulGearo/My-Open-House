@@ -18,10 +18,7 @@ namespace MyOpenHouse
             FreshWater = freshwater;
             NumberOfCreatures = numberofcreatures;
             Indangered = indangered;
-
         }
-
-
         public void ShowExhibit()
         {
             string answer = Program.GetUserResponse("Would you like to start the you the " + Name + "?\n");

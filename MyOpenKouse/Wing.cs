@@ -4,8 +4,10 @@ using System.Text;
 
 namespace MyOpenHouse
 {
-    class Wing
+    public class Wing
     {
-        List<Exhibit> Exhibits { get; set; }
+       public string Name { get; set; }
+
+        public List<Exhibit> Exhibits { get; set; } = new List<Exhibit>();
     }
 }
