@@ -41,6 +41,8 @@ namespace MyOpenHouse
 
         static void Main(string[] args)
         {
+
+
             Exhibit bullShark = new Exhibit("Bull Shark");
             bullShark.Descriptions.Add("...");
 
@@ -49,6 +51,12 @@ namespace MyOpenHouse
 
             Exhibit hammerheadShark = new Exhibit("Hammerhead Shark");
             hammerheadShark.Descriptions.Add("...");
+
+            Wing sharkWing = new Wing();
+            sharkWing.Exhibits.Add(bullShark);
+            sharkWing.Exhibits.Add(tigerShark);
+            sharkWing.Exhibits.Add(hammerheadShark);
+
 
 
             Exhibit clownFish = new Exhibit("Clownfish");
@@ -63,6 +71,13 @@ namespace MyOpenHouse
             Exhibit yellowTang = new Exhibit("Yellow Tang");
             yellowTang.Descriptions.Add("...");
 
+            Wing tropicalfishWing = new Wing();
+            tropicalfishWing.Exhibits.Add(zebraFish);
+            tropicalfishWing.Exhibits.Add(clownFish);
+            tropicalfishWing.Exhibits.Add(pufferFish);
+            tropicalfishWing.Exhibits.Add(yellowTang);
+
+
 
             Exhibit seaUrchin = new Exhibit("Sea Urchin");
             seaUrchin.Descriptions.Add("...");
@@ -73,10 +88,10 @@ namespace MyOpenHouse
             Exhibit octopus = new Exhibit("Octopus");
             octopus.Descriptions.Add("...");
 
+            Wing shellfishwing = new Wing();
 
 
-
-
+            TourGuide tourGuide = new TourGuide();
             Console.WriteLine("Welcome to the Walkthrough Aquarium.");
             Console.WriteLine("This aquarium is a walkthrough of each exibit,");
             Console.WriteLine("with a decription of each creature");
@@ -91,9 +106,10 @@ namespace MyOpenHouse
             string answer = GetUserResponse("Would you like to start the tour ?\n");
             if (YesOrNO(answer))
             {
-
-
+                tourGuide.ShowWing(sharkWing);
+                tourGuide.ShowWing(tropicalfishWing);    
                 
+
 
 
             }

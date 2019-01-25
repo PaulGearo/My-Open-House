@@ -4,13 +4,13 @@ using System.Text;
 
 namespace MyOpenHouse
 {
-    class Exhibit
+    public class Exhibit
     {
         public string Name { get; set; }
-       /* public bool FreshWater { get; set; }
+        public bool FreshWater { get; set; }
         public int NumberOfCreatures { get; set; }
         public bool Indangered { get; set; }
-        public List<string> Descriptions { get; set; } = new List<string>();*/
+        public List<string> Descriptions { get; set; } = new List<string>();
 
         public Exhibit(string name, bool freshwater, int numberofcreatures, bool indangered)
         {
