@@ -9,32 +9,18 @@ namespace MyOpenHouse
         public string ExhibitName { get; set; }
         public bool Indangered { get; set; }
         public int NumberOfCreatures { get; set; }
-        public bool FreshWater { get; set; }
+        public bool IsBig { get; set; }
         public List<string> Descriptions { get; set; } = new List<string>();
 
-        public Exhibit(string name, bool freshwater, int numberofcreatures, bool indangered)
+        public Exhibit(string name, bool isBig, int numberOfCreatures, bool indangered)
         {
             ExhibitName = name;
             Indangered = indangered;
-            NumberOfCreatures = numberofcreatures;
-            FreshWater = freshwater;
+            NumberOfCreatures = numberOfCreatures;
+            IsBig = isBig;
         }
+
         public void ShowExhibit()
-        {
-            string answer = Program.GetUserResponse("Would you like to start the you the " + ExhibitName + "?\n");
-            if (Program.YesOrNO(answer))
-            {
-                foreach (string description in Descriptions)
-                {
-                    Console.WriteLine(description);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Okay, let's move on to the next exhibit.\n");
-            }
-        }
-        public void ShowRoom()
         {
             // Ask about the room and display if they answer yes
             string answer = Program.GetUserResponse("Would you like to see the " + ExhibitName + "?");
@@ -49,19 +35,27 @@ namespace MyOpenHouse
                     Console.WriteLine("This speacies is not indangered ");
                 }
                 Console.WriteLine("We have " + NumberOfCreatures + " in this exhibit.");
-                if (FreshWater)
+                if (IsBig)
                 {
-                    Console.WriteLine("...");
+                    Console.WriteLine("is big");
                 }
                 else
                 {
-                    Console.WriteLine("...");
+                    Console.WriteLine("is small");
                 }
                 foreach (string description in Descriptions)
                 {
                     Console.WriteLine(description);
                 }
+
+                Console.WriteLine("lets's see the next exhibit.\n");
+
             }
+            else
+            {
+                Console.WriteLine("Okay, Let's see the next exhibit.");
+            }
+
         }
     }
 }

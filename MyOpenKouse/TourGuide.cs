@@ -19,7 +19,7 @@ namespace MyOpenHouse
         }
         public void ShowWing(Wing wingToShow)
         {
-            string answer = Program.GetUserResponse("would you like to see our " + wingToShow.Name + " ?");
+            string answer = Program.GetUserResponse("would you like to see our " + wingToShow.Name + "?");
             if (Program.YesOrNO(answer))
             {
                 foreach (Exhibit exhibit in wingToShow.Exhibits)
@@ -32,20 +32,20 @@ namespace MyOpenHouse
         {
             Console.WriteLine("Welcome to the Walkthrough Aquarium.");
             Console.WriteLine("This aquarium is a walkthrough of each exibit,");
-            Console.WriteLine("with a decription of each creature");
-            Console.WriteLine("along with information and fun facts on each species.\n");
+            Console.WriteLine("With a decription of each creature");
+            Console.WriteLine("Along with information and fun facts on each species.\n");
 
-            string name = Program.GetUserResponse("what's your name\n");
+            string name = Program.GetUserResponse("What's your name?");
 
-            Console.WriteLine("welcome " + name + ".");
-            Console.WriteLine("My name is " + Name + ", I am the tour guide for this walkthrough.");
+            Console.WriteLine("\nWelcome " + name + ".");
+            Console.WriteLine("My name is " + Name + ", I am the tour guide for this walkthrough.\n");
             return name;
 
         }
 
         public void VisitorSaysNo(Visitor visitor)
         {
-            Console.WriteLine("Ok, thanks for coming in.\n");
+            Console.WriteLine("Ok, thanks for coming in" + visitor.Name + "\n");
 
             string answer = Program.GetUserResponse("would you like to learn more about us?\n");
             if (Program.YesOrNO(answer))
