@@ -9,6 +9,5 @@ namespace MyOpenHouse
        public string Name { get; set; }
 
         public List<Exhibit> Exhibits { get; set; } = new List<Exhibit>();
-
     }
 }

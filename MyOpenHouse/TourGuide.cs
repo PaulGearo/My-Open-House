@@ -19,7 +19,7 @@ namespace MyOpenHouse
         }
         public void ShowWing(Wing wingToShow)
         {
-            string answer = Program.GetUserResponse("would you like to see our " + wingToShow.Name + "?");
+            string answer = Program.GetUserResponse($"\nwould you like to see our {wingToShow.Name}?\n");
             if (Program.YesOrNO(answer))
             {
                 foreach (Exhibit exhibit in wingToShow.Exhibits)
@@ -37,15 +37,15 @@ namespace MyOpenHouse
 
             string name = Program.GetUserResponse("What's your name?");
 
-            Console.WriteLine("\nWelcome " + name + ".");
-            Console.WriteLine("My name is " + Name + ", I am the tour guide for this walkthrough.\n");
+            Console.WriteLine($"\nWelcome {name}.");
+            Console.WriteLine($"My name is {Name}, I am the tour guide for this walkthrough.\n");
             return name;
 
         }
 
         public void VisitorSaysNo(Visitor visitor)
         {
-            Console.WriteLine("Ok, thanks for coming in" + visitor.Name + "\n");
+            Console.WriteLine($"Ok, thanks for coming in {visitor.Name}.\n");
 
             string answer = Program.GetUserResponse("would you like to learn more about us?\n");
             if (Program.YesOrNO(answer))
@@ -58,13 +58,18 @@ namespace MyOpenHouse
             }
 
         }
+        public void EndOfTour(Visitor visitor)
+        {
+            Speak("\nThis is the end of our tour, we are a non-profit aquarium and are in the process of constructing a gift shop to support our cause," +
+                " which should be avalible by your next visit.\n");
+        }
+
         public void WishFarewell(Visitor visitor)
         {
             //this end seemed most appropriate for leaving an establishment like an aquarium.
-            Speak("Thank you for visiting, we hope to see you again soon!\n");
-            Speak("Have a great day " + visitor.Name + "!");
+            Speak("\nThank you for visiting, we hope to see you again soon!\n");
+            Speak($"Have a great day {visitor.Name}!");
         }
-
         public string GetResponseFromVisitor(String question)
         {
             Speak(question);

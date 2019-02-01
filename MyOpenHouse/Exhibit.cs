@@ -9,40 +9,31 @@ namespace MyOpenHouse
         public string ExhibitName { get; set; }
         public bool Indangered { get; set; }
         public int NumberOfCreatures { get; set; }
-        public bool IsBig { get; set; }
         public List<string> Descriptions { get; set; } = new List<string>();
 
-        public Exhibit(string name, bool isBig, int numberOfCreatures, bool indangered)
+        public Exhibit(string name, int numberOfCreatures, bool indangered)
         {
             ExhibitName = name;
             Indangered = indangered;
             NumberOfCreatures = numberOfCreatures;
-            IsBig = isBig;
         }
 
         public void ShowExhibit()
         {
             // Ask about the room and display if they answer yes
-            string answer = Program.GetUserResponse("Would you like to see the " + ExhibitName + "?");
+            string answer = Program.GetUserResponse($"\nWould you like to see the {ExhibitName}?\n");
             if (Program.YesOrNO(answer))
             {
                 if (Indangered)
                 {
-                    Console.WriteLine("This species is indagered");
+                    Console.WriteLine("\nThis species is indagered\n");
                 }
                 else
                 {
-                    Console.WriteLine("This speacies is not indangered ");
+                    Console.WriteLine("\nThis speacies is not indangered\n");
                 }
-                Console.WriteLine("We have " + NumberOfCreatures + " in this exhibit.");
-                if (IsBig)
-                {
-                    Console.WriteLine("is big");
-                }
-                else
-                {
-                    Console.WriteLine("is small");
-                }
+                Console.WriteLine($"We have {NumberOfCreatures} in this exhibit.\n");
+
                 foreach (string description in Descriptions)
                 {
                     Console.WriteLine(description);
@@ -53,7 +44,7 @@ namespace MyOpenHouse
             }
             else
             {
-                Console.WriteLine("Okay, Let's see the next exhibit.");
+                Console.WriteLine("Okay, Let's see the next exhibit.\n");
             }
 
         }
