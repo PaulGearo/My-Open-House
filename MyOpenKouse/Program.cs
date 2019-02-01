@@ -36,6 +36,9 @@ namespace MyOpenHouse
         }
         public static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Black;
+
             Exhibit bullShark = new Exhibit("Bull Shark", 1, false);
             bullShark.Descriptions.Add(File.ReadAllText("Bull Shark Facts.txt"));
             Exhibit tigerShark = new Exhibit("Tiger Shark", 2, false);
