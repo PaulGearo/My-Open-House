@@ -45,12 +45,8 @@ namespace MyOpenHouse
             tigerShark.Descriptions.Add(File.ReadAllText("Tiger Shark Facts.txt"));
             Exhibit hammerheadShark = new Exhibit("Hammerhead Shark", 3,true);
             hammerheadShark.Descriptions.Add(File.ReadAllText("Hammerhead Shark Facts.txt"));
-            Wing sharkWing = new Wing();
-            sharkWing.Name = "Shark wing";
-            sharkWing.Exhibits.Add(bullShark);
-            sharkWing.Exhibits.Add(tigerShark);
-            sharkWing.Exhibits.Add(hammerheadShark);
-
+            Wing sharkWing = new Wing("Shark Wing", bullShark, tigerShark, hammerheadShark);
+            
             Exhibit clownFish = new Exhibit("Clownfish", 5, false);
             clownFish.Descriptions.Add(File.ReadAllText("Clownfish Facts.txt"));
             Exhibit lionFish = new Exhibit("Lionfish", 1, false);
@@ -59,12 +55,7 @@ namespace MyOpenHouse
             pufferFish.Descriptions.Add(File.ReadAllText("Pufferfish Facts.txt"));
             Exhibit yellowTang = new Exhibit("Yellow Tang", 4, false);
             yellowTang.Descriptions.Add(File.ReadAllText("Yellow Tang Facts.txt"));
-            Wing tropicalfishWing = new Wing();
-            tropicalfishWing.Name = "Tropical Fish Wing";
-            tropicalfishWing.Exhibits.Add(clownFish);
-            tropicalfishWing.Exhibits.Add(lionFish);
-            tropicalfishWing.Exhibits.Add(pufferFish);
-            tropicalfishWing.Exhibits.Add(yellowTang);
+            Wing tropicalfishWing = new Wing("Tropical Fish Wing", clownFish, lionFish, pufferFish, yellowTang);
 
             Exhibit seaUrchin = new Exhibit("Sea Urchin", 3, false);
             seaUrchin.Descriptions.Add(File.ReadAllText("Sea Urchin Facts.txt"));
@@ -72,11 +63,7 @@ namespace MyOpenHouse
             lobster.Descriptions.Add(File.ReadAllText("Lobster Facts.txt"));
             Exhibit octopus = new Exhibit("Octopus", 1, false);
             octopus.Descriptions.Add(File.ReadAllText("Octopus Facts.txt"));
-            Wing shellfishwing = new Wing();
-            shellfishwing.Name = "Shellfish Wing";
-            shellfishwing.Exhibits.Add(lobster);
-            shellfishwing.Exhibits.Add(seaUrchin);
-            shellfishwing.Exhibits.Add(octopus);
+            Wing shellfishwing = new Wing("Shellfish Wing", lobster, seaUrchin, octopus);
 
             TourGuide tourGuide = new TourGuide();
             tourGuide.Name = "Willy Freeman";
@@ -101,5 +88,6 @@ namespace MyOpenHouse
 
             Console.ReadLine();
         }
+
     }
 }

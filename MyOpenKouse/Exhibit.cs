@@ -26,7 +26,7 @@ namespace MyOpenHouse
             {
                 if (Indangered)
                 {
-                    Console.WriteLine("\nThis species is indagered\n");
+                    Console.WriteLine("\nThis speacies is indagered\n");
                 }
                 else
                 {
